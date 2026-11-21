@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HERBIL Herbal Mosquito Repellent — Rs. 500 | HERBIL</title>
+  <meta name="description" content="Shop HERBIL Herbal Mosquito Repellent. Safe, all-natural protection powered by pure botanical oils. 100ml spray bottle for Rs. 500.">
+  <link rel="stylesheet" href="css/herbil.css">
+  <link rel="icon" type="image/png" href="assets/herbil/logo-emblem-clean.png">
+</head>
+<body>
+
+  <!-- Top Sticky Navigation Header (Wearabaa Style) -->
+  <header class="pdp-header">
+    <div class="pdp-nav-container">
+      
+      <!-- Left: Menu Icon -->
+      <div class="nav-left">
+        <button class="nav-icon-btn" onclick="openMenuDrawer()" aria-label="Open Navigation Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <line x1="3" y1="7" x2="21" y2="7"></line>
+            <line x1="3" y1="17" x2="21" y2="17"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Center: HERBIL Brand Logo & Title (Matching Bottle Packaging) -->
+      <a href="index.html" class="pdp-brand-center" title="Return to Homepage">
+        <div class="pdp-logo-mini">
+          <img src="assets/herbil/logo-emblem-clean.png" alt="HERBIL Emblem">
+        </div>
+        <img src="assets/herbil/brand-name-lettering.png" alt="HERBIL" class="pdp-brand-lettering">
+      </a>
+
+      <!-- Right: Search & Shopping Cart Icons -->
+      <div class="nav-right">
+        <!-- Search Button -->
+        <button class="nav-icon-btn" onclick="openSearchModal()" aria-label="Search Store">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <!-- Shopping Cart Button with Dynamic Badge -->
+        <button class="nav-icon-btn" onclick="openCartDrawer()" aria-label="Open Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge-count" style="display: none;">0</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumb-bar" aria-label="Breadcrumb">
+    <a href="index.html">Home</a>
+    <span>/</span>
+    <span style="color: var(--text-primary); font-weight: 500;">HERBIL Herbal Mosquito Repellent</span>
+  </nav>
+
+  <!-- Main Product Showcase Grid -->
+  <main class="pdp-main-content">
+    
+    <!-- Left Column: Interactive Product Gallery (Image & Video Slider) -->
+    <div class="pdp-media-column">
+      <div class="pdp-gallery-container">
+        
+        <!-- Slider Track Wrap with Swipe & Slide Support -->
+        <div class="gallery-slider-wrap" id="gallery-slider-wrap">
+          
+          <div class="gallery-slider-track" id="gallery-slider-track">
+            <!-- Slide 1: High-Resolution Photo -->
+            <div class="gallery-slide" id="slide-photo">
+              <img src="assets/herbil/product-bottle.webp" alt="HERBIL Herbal Mosquito Repellent 100ml Bottle" id="main-product-img">
+              <div class="pdp-image-tag">100% Herbal Formula</div>
+            </div>
+
+            <!-- Slide 2: Real Product Action Video -->
+            <div class="gallery-slide" id="slide-video">
+              <video id="product-media-video" playsinline controls loop preload="metadata" poster="assets/herbil/product-bottle.webp">
+                <source src="assets/herbil/product-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="pdp-image-tag" style="background: rgba(0,0,0,0.7); color: #fff;">🎬 Demonstration Video</div>
+            </div>
+          </div>
+
+          <!-- Navigation Arrows -->
+          <button class="slider-arrow-btn prev" id="slider-btn-prev" onclick="goToGallerySlide(0)" aria-label="Previous Slide">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button class="slider-arrow-btn next" id="slider-btn-next" onclick="goToGallerySlide(1)" aria-label="Next Slide">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+
+          <!-- Slide Indicators (Dots) -->
+          <div class="gallery-dots-bar">
+            <span class="gallery-dot active" id="dot-0" onclick="goToGallerySlide(0)"></span>
+            <span class="gallery-dot" id="dot-1" onclick="goToGallerySlide(1)"></span>
+          </div>
+
+        </div>
+
+        <!-- Thumbnails Row (Photo & Video) -->
+        <div class="gallery-thumbs-row">
+          <div class="gallery-thumb-item active" id="thumb-0" onclick="goToGallerySlide(0)" title="Product Photo">
+            <img src="assets/herbil/product-bottle.webp" alt="Bottle Photo Thumbnail">
+          </div>
+          <div class="gallery-thumb-item" id="thumb-1" onclick="goToGallerySlide(1)" title="Product Video">
+            <img src="assets/herbil/product-bottle.webp" alt="Video Thumbnail">
+            <div class="thumb-video-badge">
+              <svg viewBox="0 0 24 24">
+                <polygon points="6 4 20 12 6 20 6 4"></polygon>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Right Column: Product Details & Purchase Actions -->
+    <div class="pdp-info-column">
+      
+      <div class="product-tagline">Natural Pest Defense</div>
+      <h1 class="pdp-title">HERBIL Herbal Mosquito Repellent</h1>
+
+      <!-- Rating & Social Proof -->
+      <div class="pdp-rating-row">
+        <span class="stars">★★★★★</span>
+        <span style="font-weight: 600; color: var(--text-primary);">4.9</span>
+        <span class="review-count">· 128 Customer Reviews</span>
+      </div>
+
+      <!-- Price Block -->
+      <div class="pdp-price-row">
+        <span class="pdp-price">Rs. 500</span>
+        <span class="pdp-tax-note">Taxes included · Free shipping on eligible orders</span>
+      </div>
+
+      <!-- Dedicated Product Overview Narrative -->
+      <div class="pdp-overview">
+        Crafted with an all-natural synergy of pure botanical extracts, <strong>HERBIL</strong> offers gentle yet uncompromising defense against mosquitoes and biting insects. Free from synthetic chemicals, DEET, and sticky parabens, it shields your family while leaving a calming herbal fragrance on the skin.
+      </div>
+
+      <!-- Value Props Highlights -->
+      <div class="pdp-highlights-grid">
+        <div class="highlight-item">
+          <span class="highlight-icon">🌿</span>
+          <span class="highlight-text">100% Natural Oils</span>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-icon">🛡️</span>
+          <span class="highlight-text">8-Hr Protection</span>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-icon">👶</span>
+          <span class="highlight-text">Safe for Family</span>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-icon">🚫</span>
+          <span class="highlight-text">DEET-Free Purity</span>
+        </div>
+      </div>
+
+      <!-- Quantity Selector & Action Buttons -->
+      <div class="pdp-actions-group">
+        <div>
+          <label class="qty-label" for="pdp-qty-input">Quantity</label>
+          <div class="quantity-selector">
+            <button class="qty-btn" id="pdp-qty-minus" type="button" aria-label="Decrease quantity">−</button>
+            <input type="number" id="pdp-qty-input" class="qty-input" value="1" min="1" max="99" aria-label="Item quantity">
+            <button class="qty-btn" id="pdp-qty-plus" type="button" aria-label="Increase quantity">+</button>
+          </div>
+        </div>
+
+        <!-- Add to Cart & Buy Now Buttons -->
+        <button class="btn-add-to-cart" id="btn-add-cart" onclick="addToCart(parseInt(document.getElementById('pdp-qty-input').value) || 1)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span>Add to Cart</span>
+        </button>
+
+        <button class="btn-buy-now" id="btn-buy-now" onclick="buyNow()">
+          Buy Now
+        </button>
+      </div>
+
+      <!-- Expandable Sections (Wearabaa Style Accordions) -->
+      <div class="accordion-wrapper">
+        
+        <!-- 1. Product Description -->
+        <div class="accordion-item">
+          <button class="accordion-header" type="button">
+            <span>Product Description</span>
+            <span class="accordion-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-inner">
+              <p>
+                <strong>HERBIL Herbal Mosquito Repellent</strong> is formulated to provide dependable, nature-powered protection against mosquito-borne nuisances. Our lightweight spray mist creates an invisible aromatic shield that naturally confuses and deters mosquitoes without harsh industrial fumes or sticky synthetic residues.
+              </p>
+              <ul style="margin-top: 0.75rem;">
+                <li>Quick-absorbing, non-greasy fine mist application.</li>
+                <li>Gentle on sensitive skin and safe for clothing fabrics.</li>
+                <li>Delightful citrus-herbal fragrance that refreshes your space.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Benefits -->
+        <div class="accordion-item">
+          <button class="accordion-header" type="button">
+            <span>Benefits</span>
+            <span class="accordion-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-inner">
+              <ul>
+                <li><strong>All-Day Outdoor &amp; Indoor Protection:</strong> Deters common house mosquitoes, tiger mosquitoes, and garden gnats.</li>
+                <li><strong>Zero Harsh Chemicals:</strong> 100% free from DEET, phthalates, parabens, and synthetic pesticides.</li>
+                <li><strong>Skin-Nourishing Blend:</strong> Infused with soothing plant oils that prevent skin irritation and redness.</li>
+                <li><strong>Family &amp; Pet Friendly:</strong> Safe for adults, active children, and outdoor lifestyle enthusiasts.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Ingredients -->
+        <div class="accordion-item">
+          <button class="accordion-header" type="button">
+            <span>Ingredients</span>
+            <span class="accordion-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-inner">
+              <p>Every bottle of HERBIL is blended using wholesome, ethically sourced botanical extracts:</p>
+              <ul>
+                <li><strong>Cymbopogon Citratus (Lemongrass Oil):</strong> Celebrated for its potent natural insect-repelling terpene profile.</li>
+                <li><strong>Cymbopogon Winterianus (Citronella Oil):</strong> Traditional botanical vapor repellent.</li>
+                <li><strong>Eucalyptus Globulus (Eucalyptus Oil):</strong> Refreshing aroma with natural bug-deterring properties.</li>
+                <li><strong>Syzygium Aromaticum (Clove Extract):</strong> Rich in eugenol for enhanced multi-hour efficacy.</li>
+                <li><strong>Azadirachta Indica (Neem Extract):</strong> Centuries-proven herbal skin purifier and barrier.</li>
+                <li><strong>Natural Carrier Base:</strong> Purified distilled water, organic aloe extract, and plant-derived solubilizer.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Usage Instructions -->
+        <div class="accordion-item">
+          <button class="accordion-header" type="button">
+            <span>Usage Instructions</span>
+            <span class="accordion-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-inner">
+              <ul>
+                <li><strong>Shake Well:</strong> Always shake bottle before each application to blend the natural oils.</li>
+                <li><strong>Application:</strong> Hold the nozzle 15 cm away and spray evenly over uncovered arms, legs, and neck.</li>
+                <li><strong>For Face Application:</strong> Spray onto the palms of hands first and gently pat onto face, avoiding eyes and lips.</li>
+                <li><strong>Re-application:</strong> Re-apply every 6 to 8 hours, or after swimming and heavy perspiration.</li>
+                <li><strong>Storage:</strong> Keep in a cool, dry place away from direct sunlight.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Additional Information -->
+        <div class="accordion-item">
+          <button class="accordion-header" type="button">
+            <span>Additional Information</span>
+            <span class="accordion-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-inner">
+              <ul>
+                <li><strong>Net Volume:</strong> 100 ml (3.38 fl. oz.) spray dispenser bottle.</li>
+                <li><strong>Shelf Life:</strong> 24 months from batch manufacturing date.</li>
+                <li><strong>Certifications:</strong> 100% Herbal, Vegan, Cruelty-Free, Non-Flammable.</li>
+                <li><strong>Batch Details:</strong> Stamped on base of each bottle.</li>
+                <li><strong>Packaging:</strong> Recyclable amber bottle protecting active herbal oils from UV light degradation.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Slide-out Mobile Menu Drawer -->
+  <aside class="menu-drawer" id="menu-drawer" aria-label="Main Menu">
+    <div class="drawer-header">
+      <h3 class="drawer-title">Navigation</h3>
+      <button class="drawer-close-btn" onclick="closeMenuDrawer()" aria-label="Close menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <ul class="menu-nav-links">
+      <li><a href="index.html">← Back to Homepage</a></li>
+      <li><a href="product.html">HERBIL Mosquito Repellent</a></li>
+      <li><a href="index.html#about" onclick="closeMenuDrawer()">About HERBIL</a></li>
+      <li><a href="javascript:void(0)" onclick="closeMenuDrawer(); openCartDrawer()">View Shopping Bag</a></li>
+    </ul>
+    <div style="padding: 1.5rem; margin-top: auto; border-top: 1px solid var(--border-subtle); font-size: 0.8rem; color: var(--text-muted);">
+      HERBIL Pure Living &copy; 2026. Made with natural botanical oils.
+    </div>
+  </aside>
+
+  <!-- Slide-out Cart Drawer -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Cart">
+    <div class="drawer-header">
+      <h3 class="drawer-title">Your Cart</h3>
+      <button class="drawer-close-btn" onclick="closeCartDrawer()" aria-label="Close cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="drawer-body">
+      <!-- Empty State -->
+      <div class="cart-empty-view" id="cart-drawer-empty">
+        <div class="cart-empty-icon">🌿</div>
+        <p class="cart-empty-text">Your cart is currently empty.</p>
+        <button class="btn-continue-shopping" onclick="closeCartDrawer()">Shop HERBIL Now</button>
+      </div>
+
+      <!-- Line Items List -->
+      <div id="cart-drawer-items"></div>
+    </div>
+
+    <div class="drawer-footer" id="cart-drawer-footer" style="display: none;">
+      <div class="drawer-subtotal-row">
+        <span>Subtotal</span>
+        <span id="cart-subtotal">Rs. 0</span>
+      </div>
+      <div class="drawer-total-row">
+        <span>Total</span>
+        <span id="cart-total">Rs. 0</span>
+      </div>
+      <button class="btn-drawer-checkout" onclick="openCheckoutModal()">
+        Proceed to Checkout
+      </button>
+    </div>
+  </aside>
+
+  <!-- Search Modal -->
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-box">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="search-input" placeholder="Search HERBIL products..." autocomplete="off">
+        <button class="drawer-close-btn" onclick="closeSearchModal()" aria-label="Close search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <div class="search-results-list" id="search-results">
+        <div style="padding: 1rem 0; font-size: 0.88rem; color: var(--text-muted); text-align: center;">
+          Type to search our herbal catalog...
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div class="checkout-modal" id="checkout-modal">
+    <div class="checkout-card">
+      <div class="checkout-header">
+        <h3 class="checkout-title">Express Checkout</h3>
+        <button class="drawer-close-btn" onclick="closeCheckoutModal()" aria-label="Close checkout">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="checkout-body">
+        <!-- Order Summary Box -->
+        <div class="order-summary-box">
+          <div class="summary-item-line" id="checkout-summary-item">
+            <span>HERBIL Mosquito Repellent (×1)</span>
+            <span>Rs. 500</span>
+          </div>
+          <div class="summary-item-line" style="color: var(--brand-accent-herb); font-weight: 600;">
+            <span>Standard Shipping</span>
+            <span>FREE</span>
+          </div>
+          <div class="summary-total-line">
+            <span>Amount to Pay</span>
+            <span id="checkout-summary-total">Rs. 500</span>
+          </div>
+        </div>
+
+        <!-- Checkout Form -->
+        <form id="checkout-form" onsubmit="handleCheckoutSubmit(event)">
+          <div class="form-group">
+            <label for="c-name">Full Name</label>
+            <input type="text" id="c-name" class="form-input" placeholder="e.g. Ayesha Khan" required>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="c-phone">Phone Number</label>
+              <input type="tel" id="c-phone" class="form-input" placeholder="03XX-XXXXXXX" required>
+            </div>
+            <div class="form-group">
+              <label for="c-email">Email (Optional)</label>
+              <input type="email" id="c-email" class="form-input" placeholder="ayesha@example.com">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="c-address">Delivery Address</label>
+            <input type="text" id="c-address" class="form-input" placeholder="House #, Street, Area" required>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="c-city">City</label>
+              <input type="text" id="c-city" class="form-input" placeholder="e.g. Lahore / Karachi" required>
+            </div>
+            <div class="form-group">
+              <label for="c-postal">Postal Code</label>
+              <input type="text" id="c-postal" class="form-input" placeholder="Optional">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Payment Method</label>
+            <div class="payment-options-grid">
+              <label class="payment-radio-label">
+                <input type="radio" name="payment_method" value="cod" checked>
+                <span>💵 Cash on Delivery</span>
+              </label>
+              <label class="payment-radio-label">
+                <input type="radio" name="payment_method" value="bank">
+                <span>🏦 Bank Transfer</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-complete-order" id="btn-place-order">Complete Order</button>
+        </form>
+
+        <!-- Order Success View -->
+        <div class="order-success-view" id="order-success-view" style="display: none;">
+          <div class="success-icon-circle">✓</div>
+          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 0.5rem;">Order Confirmed!</h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
+            Thank you for ordering HERBIL. Your order ID is <strong id="order-confirmed-id">HRB-849102</strong>.
+          </p>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+            We will contact you via phone/SMS before dispatching your pure herbal repellent.
+          </p>
+          <button class="btn-continue-shopping" onclick="closeCheckoutModal()">Continue Browsing</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast-notice" class="toast-notice"></div>
+
+  <!-- Floating WhatsApp Chat Bot Widget -->
+  <aside class="whatsapp-floating-widget" id="whatsapp-widget" aria-label="Contact HERBIL via WhatsApp">
+    <a href="https://wa.me/923004116503?text=Hi%20HERBIL,%20I%20have%20an%20inquiry%20about%20HERBIL%20Herbal%20Mosquito%20Repellent." 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="whatsapp-btn-circle" 
+       title="Chat with HERBIL on WhatsApp (0300-4116503)">
+      <svg viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662a11.835 11.835 0 005.712 1.464h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+    <a href="https://wa.me/923004116503?text=Hi%20HERBIL,%20I%20have%20an%20inquiry%20about%20HERBIL%20Herbal%20Mosquito%20Repellent." 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="whatsapp-bubble-pill" 
+       id="wa-bubble-pill">
+      <span>Need help? Chat with us</span>
+      <button type="button" class="whatsapp-bubble-close" onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('wa-bubble-pill').style.display='none';" aria-label="Dismiss message">×</button>
+    </a>
+  </aside>
+
+  <script src="js/herbil-cart.js"></script>
+</body>
+</html>

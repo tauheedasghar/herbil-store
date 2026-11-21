@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HERBIL — Pure Herbal Mosquito Repellent</title>
+  <meta name="description" content="HERBIL Herbal Mosquito Repellent. 100% natural, gentle, and chemical-free protection for the whole family.">
+  <link rel="stylesheet" href="css/herbil.css">
+  <link rel="icon" type="image/png" href="assets/herbil/logo-emblem-clean.png">
+</head>
+<body class="home-page">
+
+  <!-- Minimalist Brand Header -->
+  <header class="home-header">
+    <div class="home-container">
+      <!-- Only Logo Emblem (Favicon-style in moderate size) -->
+      <a href="index.html" class="home-logo-wrap" title="HERBIL">
+        <img src="assets/herbil/logo-emblem-clean.png" alt="HERBIL Emblem Logo">
+      </a>
+      
+      <!-- Brand Name Label Written Separately Underneath (Matching Bottle Packaging) -->
+      <h1 class="home-brand-title-wrap">
+        <img src="assets/herbil/brand-name-lettering.png" alt="HERBIL" class="home-brand-lettering">
+      </h1>
+      <p class="home-brand-subtitle">Herbal Care &amp; Natural Protection</p>
+      
+      <!-- Decorative minimal divider -->
+      <div class="home-divider"></div>
+    </div>
+  </header>
+
+  <!-- Product Section: Single Minimalist Card -->
+  <main class="home-product-section">
+    <div class="home-container">
+      <!-- 
+        The entire product card is clickable and navigates cleanly to the second page (product.html)
+      -->
+      <a href="product.html" class="single-product-card" id="main-product-card" aria-label="View HERBIL Mosquito Repellent product details">
+        
+        <!-- Bottle Image Container with New Product Image -->
+        <div class="product-card-image-box">
+          <span class="card-badge">100% Herbal</span>
+          <img src="assets/herbil/product-bottle.webp" alt="HERBIL Herbal Mosquito Repellent Bottle">
+        </div>
+
+        <!-- Product Name & Price Info Underneath -->
+        <div class="product-card-info">
+          <h2 class="product-card-name">HERBIL Mosquito Repellent</h2>
+          <div class="product-card-price">Rs. 500</div>
+          <div class="view-product-pill">
+            <span>Click to view product</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </div>
+
+      </a>
+    </div>
+  </main>
+
+  <!-- Minimal Brand Footer -->
+  <footer class="home-footer">
+    <div class="home-container">
+      <p>&copy; 2026 HERBIL. All rights reserved. Handcrafted herbal essentials.</p>
+    </div>
+  </footer>
+
+  <!-- Slide-out Cart Drawer (Functional across pages) -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Cart">
+    <div class="drawer-header">
+      <h3 class="drawer-title">Your Cart</h3>
+      <button class="drawer-close-btn" onclick="closeCartDrawer()" aria-label="Close cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="drawer-body">
+      <!-- Empty State -->
+      <div class="cart-empty-view" id="cart-drawer-empty">
+        <div class="cart-empty-icon">🌿</div>
+        <p class="cart-empty-text">Your cart is currently empty.</p>
+        <a href="product.html" class="btn-continue-shopping" onclick="closeCartDrawer()">View Product Details</a>
+      </div>
+
+      <!-- Line Items List -->
+      <div id="cart-drawer-items"></div>
+    </div>
+
+    <div class="drawer-footer" id="cart-drawer-footer" style="display: none;">
+      <div class="drawer-subtotal-row">
+        <span>Subtotal</span>
+        <span id="cart-subtotal">Rs. 0</span>
+      </div>
+      <div class="drawer-total-row">
+        <span>Total</span>
+        <span id="cart-total">Rs. 0</span>
+      </div>
+      <button class="btn-drawer-checkout" onclick="openCheckoutModal()">
+        Proceed to Checkout
+      </button>
+    </div>
+  </aside>
+
+  <!-- Checkout Modal -->
+  <div class="checkout-modal" id="checkout-modal">
+    <div class="checkout-card">
+      <div class="checkout-header">
+        <h3 class="checkout-title">Express Checkout</h3>
+        <button class="drawer-close-btn" onclick="closeCheckoutModal()" aria-label="Close checkout">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="checkout-body">
+        <!-- Order Summary Box -->
+        <div class="order-summary-box">
+          <div class="summary-item-line" id="checkout-summary-item">
+            <span>HERBIL Mosquito Repellent (×1)</span>
+            <span>Rs. 500</span>
+          </div>
+          <div class="summary-item-line" style="color: var(--brand-accent-herb); font-weight: 600;">
+            <span>Standard Shipping</span>
+            <span>FREE</span>
+          </div>
+          <div class="summary-total-line">
+            <span>Amount to Pay</span>
+            <span id="checkout-summary-total">Rs. 500</span>
+          </div>
+        </div>
+
+        <!-- Checkout Form -->
+        <form id="checkout-form" onsubmit="handleCheckoutSubmit(event)">
+          <div class="form-group">
+            <label for="c-name">Full Name</label>
+            <input type="text" id="c-name" class="form-input" placeholder="e.g. Ayesha Khan" required>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="c-phone">Phone Number</label>
+              <input type="tel" id="c-phone" class="form-input" placeholder="03XX-XXXXXXX" required>
+            </div>
+            <div class="form-group">
+              <label for="c-email">Email (Optional)</label>
+              <input type="email" id="c-email" class="form-input" placeholder="ayesha@example.com">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="c-address">Delivery Address</label>
+            <input type="text" id="c-address" class="form-input" placeholder="House #, Street, Area" required>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="c-city">City</label>
+              <input type="text" id="c-city" class="form-input" placeholder="e.g. Lahore / Karachi" required>
+            </div>
+            <div class="form-group">
+              <label for="c-postal">Postal Code</label>
+              <input type="text" id="c-postal" class="form-input" placeholder="Optional">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Payment Method</label>
+            <div class="payment-options-grid">
+              <label class="payment-radio-label">
+                <input type="radio" name="payment_method" value="cod" checked>
+                <span>💵 Cash on Delivery</span>
+              </label>
+              <label class="payment-radio-label">
+                <input type="radio" name="payment_method" value="bank">
+                <span>🏦 Bank Transfer</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-complete-order" id="btn-place-order">Complete Order</button>
+        </form>
+
+        <!-- Order Success View -->
+        <div class="order-success-view" id="order-success-view" style="display: none;">
+          <div class="success-icon-circle">✓</div>
+          <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 0.5rem;">Order Confirmed!</h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
+            Thank you for ordering HERBIL. Your order ID is <strong id="order-confirmed-id">HRB-849102</strong>.
+          </p>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+            We will contact you via phone/SMS before dispatching your pure herbal repellent.
+          </p>
+          <button class="btn-continue-shopping" onclick="closeCheckoutModal()">Continue Browsing</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Chat Bot Widget -->
+  <aside class="whatsapp-floating-widget" id="whatsapp-widget" aria-label="Contact HERBIL via WhatsApp">
+    <a href="https://wa.me/923004116503?text=Hi%20HERBIL,%20I%20have%20an%20inquiry%20about%20HERBIL%20Herbal%20Mosquito%20Repellent." 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="whatsapp-btn-circle" 
+       title="Chat with HERBIL on WhatsApp (0300-4116503)">
+      <svg viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662a11.835 11.835 0 005.712 1.464h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+    <a href="https://wa.me/923004116503?text=Hi%20HERBIL,%20I%20have%20an%20inquiry%20about%20HERBIL%20Herbal%20Mosquito%20Repellent." 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="whatsapp-bubble-pill" 
+       id="wa-bubble-pill">
+      <span>Need help? Chat with us</span>
+      <button type="button" class="whatsapp-bubble-close" onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('wa-bubble-pill').style.display='none';" aria-label="Dismiss message">×</button>
+    </a>
+  </aside>
+
+  <script src="js/herbil-cart.js"></script>
+</body>
+</html>
