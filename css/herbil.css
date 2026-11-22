@@ -459,11 +459,19 @@ img {
   gap: 2.5rem;
 }
 
-@media (min-width: 860px) {
+@media (min-width: 768px) {
+  .pdp-main-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.25rem;
+    align-items: start;
+    padding-top: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
   .pdp-main-content {
     grid-template-columns: 1.05fr 1fr;
     gap: 3.5rem;
-    align-items: start;
     padding-top: 2rem;
   }
 }
@@ -474,11 +482,17 @@ img {
   width: 100%;
 }
 
-@media (min-width: 860px) {
+@media (min-width: 768px) {
   .pdp-media-column {
     position: sticky;
-    top: 5.5rem;
+    top: 5rem;
     z-index: 10;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pdp-media-column {
+    top: 5.5rem;
   }
 }
 
@@ -1639,5 +1653,531 @@ img {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   MOBILE & TABLET RESPONSIVE OPTIMIZATIONS
+   ========================================================================== */
+
+/* Mobile Sticky Bottom Purchase Bar */
+.mobile-sticky-bar {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .mobile-sticky-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 150;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-top: 1px solid var(--border-subtle);
+    padding: 0.65rem 1rem max(0.65rem, env(safe-area-inset-bottom, 0px));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    box-shadow: 0 -4px 20px rgba(42, 29, 19, 0.08);
+    transform: translateY(115%);
+    transition: transform 0.32s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .mobile-sticky-bar.visible {
+    transform: translateY(0);
+  }
+
+  .mobile-sticky-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .mobile-sticky-name {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .mobile-sticky-price {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--brand-brown);
+  }
+
+  .mobile-sticky-btn {
+    background-color: var(--brand-brown);
+    color: #FFFFFF;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-full);
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    box-shadow: 0 4px 12px rgba(42, 29, 19, 0.2);
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.2s, transform 0.15s;
+  }
+
+  .mobile-sticky-btn:active {
+    transform: scale(0.97);
+    background-color: var(--brand-brown-hover);
+  }
+
+  /* Offset WhatsApp widget when mobile sticky bar is active */
+  .whatsapp-floating-widget.with-sticky-bar {
+    bottom: calc(74px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+
+  /* Prevent iOS automatic zoom on text inputs */
+  input[type="text"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="email"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Tablet Optimizations (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .pdp-main-content {
+    max-width: 920px;
+    gap: 2rem;
+    padding: 1.5rem 1.25rem 4rem;
+  }
+
+  .pdp-gallery-container {
+    max-width: 420px;
+  }
+
+  .gallery-slider-wrap {
+    aspect-ratio: 4 / 5;
+  }
+
+  .gallery-slide video {
+    max-height: 520px;
+  }
+
+  .pdp-title {
+    font-size: 1.95rem;
+  }
+
+  .pdp-price {
+    font-size: 1.7rem;
+  }
+
+  .pdp-highlights-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    padding: 1.1rem;
+  }
+
+  .home-container {
+    max-width: 460px;
+  }
+}
+
+/* Mobile Devices (Under 768px) */
+@media (max-width: 767px) {
+  /* Navigation & Header */
+  .pdp-header {
+    padding-top: max(0.4rem, env(safe-area-inset-top, 0px));
+  }
+
+  .pdp-nav-container {
+    padding: 0.65rem 0.85rem;
+  }
+
+  .nav-icon-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .pdp-brand-text {
+    font-size: 1.25rem;
+  }
+
+  .pdp-brand-lettering {
+    height: 22px;
+    max-width: 110px;
+  }
+
+  .breadcrumb-bar {
+    padding: 0.75rem 0.85rem 0.25rem;
+    font-size: 0.75rem;
+  }
+
+  /* PDP Content Layout */
+  .pdp-main-content {
+    padding: 1rem 0.85rem 5rem;
+    gap: 1.5rem;
+  }
+
+  .pdp-gallery-container {
+    max-width: 100%;
+  }
+
+  .gallery-slider-wrap {
+    border-radius: var(--radius-md);
+    aspect-ratio: 4 / 5;
+  }
+
+  .gallery-slide {
+    height: 100%;
+  }
+
+  .gallery-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .gallery-slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #140E0A;
+  }
+
+  .slider-arrow-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .slider-arrow-btn.prev {
+    left: 8px;
+  }
+
+  .slider-arrow-btn.next {
+    right: 8px;
+  }
+
+  .gallery-thumbs-row {
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .gallery-thumb-item {
+    width: 58px;
+    height: 58px;
+  }
+
+  /* Product Info */
+  .product-tagline {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.35rem;
+  }
+
+  .pdp-title {
+    font-size: 1.68rem;
+    line-height: 1.22;
+    margin-bottom: 0.5rem;
+  }
+
+  .pdp-rating-row {
+    margin-bottom: 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .pdp-price-row {
+    margin-bottom: 1.15rem;
+    padding-bottom: 1rem;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .pdp-price {
+    font-size: 1.6rem;
+  }
+
+  .pdp-tax-note {
+    font-size: 0.75rem;
+    width: 100%;
+  }
+
+  .pdp-overview {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Value Highlights */
+  .pdp-highlights-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+    padding: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .highlight-icon {
+    font-size: 1.2rem;
+  }
+
+  .highlight-text {
+    font-size: 0.7rem;
+  }
+
+  /* Actions Group */
+  .pdp-actions-group {
+    gap: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .quantity-selector {
+    height: 44px;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .qty-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.25rem;
+  }
+
+  .qty-input {
+    width: 44px;
+    font-size: 1rem;
+  }
+
+  .btn-add-to-cart {
+    min-height: 52px;
+    font-size: 0.92rem;
+    padding: 0.85rem 1.25rem;
+  }
+
+  .btn-buy-now {
+    min-height: 48px;
+    font-size: 0.92rem;
+    padding: 0.8rem 1.25rem;
+  }
+
+  /* Accordions */
+  .accordion-header {
+    padding: 0.95rem 0;
+    font-size: 0.92rem;
+  }
+
+  .accordion-inner {
+    font-size: 0.86rem;
+    line-height: 1.6;
+    padding-bottom: 1rem;
+  }
+
+  /* WhatsApp Widget on Mobile */
+  .whatsapp-floating-widget {
+    bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+    left: 14px;
+    gap: 8px;
+    transition: bottom 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .whatsapp-btn-circle {
+    width: 50px;
+    height: 50px;
+  }
+
+  .whatsapp-btn-circle svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .whatsapp-bubble-pill {
+    font-size: 0.78rem;
+    padding: 6px 10px 6px 12px;
+    max-width: calc(100vw - 86px);
+    white-space: normal;
+    line-height: 1.25;
+  }
+
+  /* Mobile Cart Drawer */
+  .cart-drawer {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .drawer-header {
+    padding: 1rem 1.15rem;
+  }
+
+  .drawer-title {
+    font-size: 1.2rem;
+  }
+
+  .drawer-body {
+    padding: 1rem 1.15rem;
+  }
+
+  .cart-item {
+    grid-template-columns: 65px 1fr auto;
+    gap: 0.75rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .cart-item-img-box {
+    width: 65px;
+    height: 80px;
+  }
+
+  .cart-item-name {
+    font-size: 0.95rem;
+  }
+
+  .drawer-footer {
+    padding: 1rem 1.15rem calc(1rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .btn-drawer-checkout {
+    min-height: 48px;
+    font-size: 0.92rem;
+  }
+
+  /* Mobile Checkout Sheet */
+  .checkout-modal {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .checkout-card {
+    max-width: 100%;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    max-height: 92vh;
+  }
+
+  .checkout-header {
+    padding: 1rem 1.25rem;
+  }
+
+  .checkout-body {
+    padding: 1.15rem;
+    padding-bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+    gap: 1rem;
+  }
+
+  .btn-complete-order {
+    min-height: 50px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Homepage (Page 1) Mobile Refinements */
+@media (max-width: 600px) {
+  .home-page {
+    padding: 0 0.85rem calc(1.5rem + env(safe-area-inset-bottom, 0px));
+    min-height: 100dvh;
+  }
+
+  .home-container {
+    padding-top: max(1.25rem, env(safe-area-inset-top, 0px));
+  }
+
+  .home-header {
+    margin-bottom: 1.35rem;
+  }
+
+  .home-logo-wrap {
+    width: 54px;
+    height: 54px;
+    margin-bottom: 0.5rem;
+  }
+
+  .home-brand-lettering {
+    height: 36px;
+    max-width: 180px;
+  }
+
+  .home-brand-subtitle {
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+  }
+
+  .home-divider {
+    margin-top: 1rem;
+  }
+
+  .single-product-card {
+    padding: 0.85rem 0.85rem 1.15rem;
+    border-radius: var(--radius-md);
+  }
+
+  .product-card-name {
+    font-size: 1.35rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .product-card-price {
+    font-size: 1.15rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .view-product-pill {
+    min-height: 44px;
+    padding: 0.55rem 1.15rem;
+    font-size: 0.82rem;
+  }
+
+  .home-footer {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    font-size: 0.72rem;
+  }
+}
+
+/* Extra Small Phones (Under 380px — e.g. iPhone SE, Fold outer screen) */
+@media (max-width: 380px) {
+  .home-brand-lettering {
+    height: 30px;
+    max-width: 150px;
+  }
+
+  .pdp-title {
+    font-size: 1.45rem;
+  }
+
+  .pdp-price {
+    font-size: 1.4rem;
+  }
+
+  .form-row-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-options-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .highlight-text {
+    font-size: 0.64rem;
+  }
+
+  .pdp-brand-text {
+    font-size: 1.15rem;
+  }
+
+  .pdp-brand-lettering {
+    height: 18px;
+    max-width: 90px;
+  }
+
+  .single-product-card {
+    padding: 0.75rem 0.75rem 1rem;
+  }
+
+  .gallery-thumb-item {
+    width: 50px;
+    height: 50px;
   }
 }

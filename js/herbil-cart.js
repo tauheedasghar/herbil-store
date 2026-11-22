@@ -470,6 +470,41 @@ function initGallerySwipe() {
   }
 }
 
+// Mobile Sticky Purchase Bar Observer
+function initMobileStickyBar() {
+  const stickyBar = document.getElementById('mobile-sticky-bar');
+  const mainBtn = document.getElementById('btn-add-cart');
+  const waWidget = document.getElementById('whatsapp-widget');
+  if (!stickyBar || !mainBtn) return;
+
+  // Use IntersectionObserver with scroll fallback
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+          stickyBar.classList.add('visible');
+          if (waWidget) waWidget.classList.add('with-sticky-bar');
+        } else {
+          stickyBar.classList.remove('visible');
+          if (waWidget) waWidget.classList.remove('with-sticky-bar');
+        }
+      });
+    }, { threshold: 0.1 });
+    observer.observe(mainBtn);
+  } else {
+    window.addEventListener('scroll', () => {
+      const rect = mainBtn.getBoundingClientRect();
+      if (rect.bottom < 0) {
+        stickyBar.classList.add('visible');
+        if (waWidget) waWidget.classList.add('with-sticky-bar');
+      } else {
+        stickyBar.classList.remove('visible');
+        if (waWidget) waWidget.classList.remove('with-sticky-bar');
+      }
+    }, { passive: true });
+  }
+}
+
 // Global initialization on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
   updateCartBadges();
@@ -478,6 +513,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initQtySelectors();
   initSearch();
   initGallerySwipe();
+  initMobileStickyBar();
 
   // Backdrop click listener to close all active drawers/modals
   const backdrop = document.getElementById('drawer-backdrop');

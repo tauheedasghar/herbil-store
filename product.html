@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <title>HERBIL Herbal Mosquito Repellent — Rs. 500 | HERBIL</title>
   <meta name="description" content="Shop HERBIL Herbal Mosquito Repellent. Safe, all-natural protection powered by pure botanical oils. 100ml spray bottle for Rs. 500.">
   <link rel="stylesheet" href="css/herbil.css">
@@ -504,6 +504,22 @@
 
   <!-- Toast Notification -->
   <div id="toast-notice" class="toast-notice"></div>
+
+  <!-- Mobile Sticky Bottom Buy Bar (Shows on Mobile/Tablet when scrolling past hero ATC) -->
+  <div class="mobile-sticky-bar" id="mobile-sticky-bar">
+    <div class="mobile-sticky-info">
+      <span class="mobile-sticky-name">HERBIL Repellent</span>
+      <span class="mobile-sticky-price">Rs. 500</span>
+    </div>
+    <button class="mobile-sticky-btn" onclick="addToCart(1)" aria-label="Add to Cart">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <path d="M16 10a4 4 0 0 1-8 0"></path>
+      </svg>
+      <span>Add to Cart · Rs. 500</span>
+    </button>
+  </div>
 
   <!-- Floating WhatsApp Chat Bot Widget -->
   <aside class="whatsapp-floating-widget" id="whatsapp-widget" aria-label="Contact HERBIL via WhatsApp">
