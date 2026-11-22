@@ -235,8 +235,10 @@ function openCheckoutModal() {
   const form = document.getElementById('checkout-form');
   const success = document.getElementById('order-success-view');
   if (form) {
-    form.style.display = 'flex';
-    form.style.flexDirection = 'column';
+    form.style.setProperty('display', 'flex', 'important');
+    form.style.setProperty('flex-direction', 'column', 'important');
+    form.style.setProperty('width', '100%', 'important');
+    form.style.setProperty('gap', '1rem', 'important');
   }
   if (success) success.style.display = 'none';
 
