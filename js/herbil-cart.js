@@ -234,7 +234,10 @@ function openCheckoutModal() {
   // Reset form & states
   const form = document.getElementById('checkout-form');
   const success = document.getElementById('order-success-view');
-  if (form) form.style.display = 'flex';
+  if (form) {
+    form.style.display = 'flex';
+    form.style.flexDirection = 'column';
+  }
   if (success) success.style.display = 'none';
 
   if (modal) {

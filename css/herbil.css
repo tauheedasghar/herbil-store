@@ -1380,9 +1380,21 @@ img {
 .checkout-body {
   padding: 1.5rem;
   overflow-y: auto;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+
+#checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .order-summary-box {
@@ -1390,6 +1402,8 @@ img {
   border-radius: var(--radius-md);
   padding: 1rem 1.25rem;
   border: 1px solid var(--border-subtle);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .summary-item-line {
@@ -1413,6 +1427,8 @@ img {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-group label {
@@ -1425,29 +1441,36 @@ img {
 
 .form-input {
   width: 100%;
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--border-medium);
+  box-sizing: border-box;
+  padding: 0.8rem 1rem;
+  border: 1.5px solid var(--border-medium);
   border-radius: var(--radius-sm);
   background-color: #FFFFFF;
   color: var(--text-primary);
   outline: none;
-  transition: border-color 0.2s;
+  font-size: 16px !important;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .form-input:focus {
   border-color: var(--brand-brown);
+  box-shadow: 0 0 0 3px rgba(51, 32, 20, 0.08);
 }
 
 .form-row-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.75rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .payment-options-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.75rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .payment-radio-label {
@@ -1463,6 +1486,7 @@ img {
   font-size: 0.85rem;
   font-weight: 600;
   transition: var(--transition);
+  box-sizing: border-box;
 }
 
 .payment-radio-label:has(input:checked) {
@@ -1478,12 +1502,22 @@ img {
   width: 100%;
   background-color: var(--brand-brown);
   color: #FFFFFF;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
+  min-height: 52px;
   border-radius: var(--radius-full);
   font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(42, 29, 19, 0.2);
+  transition: var(--transition);
+  box-sizing: border-box;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-complete-order:hover {
@@ -2053,23 +2087,49 @@ img {
 
   .checkout-card {
     max-width: 100%;
+    width: 100%;
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-    max-height: 92vh;
+    max-height: 90vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
   }
 
   .checkout-header {
     padding: 1rem 1.25rem;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    flex-shrink: 0;
   }
 
   .checkout-body {
-    padding: 1.15rem;
-    padding-bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+    padding: 1.15rem 1.25rem calc(1.5rem + env(safe-area-inset-bottom, 0px));
     gap: 1rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .form-row-2 {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
   }
 
   .btn-complete-order {
-    min-height: 50px;
+    min-height: 52px;
     font-size: 0.95rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 }
 
